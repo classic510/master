@@ -1,0 +1,212 @@
+# # # открытие файла замена пробелов сохранение
+# import re
+# import sys
+# import datetime
+# #
+# # # if len(sys.argv)<2
+# # #     print("not")
+# # #     sys.exit(2)
+# #
+# sl=[]
+# with open('test.txt') as f:
+#     while True:
+#         s=f.readline()
+#         if s=="":
+#             break
+#         sn=re.sub("\s","#",s)
+#         sl+=[sn]
+#         print(sl)
+#
+# with open('test.txt','w') as f:
+#     f.writelines(sl)
+
+# if __name__=="__main__":
+#     d=datetime.datetime.now()
+#     sd="Test v {}.{} on {}:{}".format(d.day,d.month,d.hour,d.minute)
+# print(sd)
+#
+# #размер переменной
+# # sl=[]
+# # import sys
+# # print(sys.getsizeof(sl))
+#
+# # sl=["Denis","shs"]
+# # print(sl)
+# # sl.clear()
+# # # sl=[]
+# # print(sl)
+#
+# # # путь к текущему файлу
+# import sys
+# # print(sys.platform)
+# q=sys.argv
+# print(q)
+# # # отображение всех переменных
+# # print(dir())
+# # # функции по умолчанию
+# # print(dir(__builtins__))
+# # print("".__doc__)
+#
+# # s1=(1,2,3)
+# # s1=[1,2,3]
+# # s2=s1[:]
+# # print(hex(id(s1)))
+# # print(oct(id(s1)))
+# # print(hex(id(s2)))
+# # print(oct(id(s2)))
+# # print(s1==s2)
+# #
+# # print(type(s2))
+#
+# import re
+# sl=[]
+# with open('test.txt') as f:
+#     while True:
+#         s=f.readline()
+#         if s=="":
+#             break
+#         sn=re.sub("#"," ",s)
+#         sl+=[sn]
+#         print(sl)
+#
+# import sys
+#
+# # argv - список аргументов командрой строки
+# # argv[0] - имя самого файла-скрипта
+# # argv[1] - первый аргумент, здесь - имя обрабатываемого файла
+# # fname = sys.argv[1]
+#
+# # Переменные для подсчета строк, слов и букв.
+# lines = 0
+# words = 0
+# letters = 0
+#
+#
+# for line in open('alice_in_wonderland.txt'):
+#     lines += 1
+#     letters += len(line)
+#     pos = 'out'
+#     for letter in line:
+#         if letter != ' ' and pos == 'out':
+#             words += 1
+#             pos = 'in'
+#         elif letter == ' ':
+#             pos = 'out'
+# print("Lines:", lines)
+# print("Words:", words)
+# print("Letters:", letters)
+
+# формирование масива рандомных чисел
+# import random
+# Rl=[random.randint(1,6) for _ in range(13)]
+# print(Rl)
+
+# # The following assumes that we already have alice30.txt on disk.
+# # Start by splitting the file into lowercase words.
+# words = open('alice_in_wonderland.txt').read().lower().split()
+#
+# # Get the set of unique words.
+# uniques = []
+# for word in words:
+#   if word not in uniques:
+#     uniques.append(word)
+#
+# # Make a list of (count, unique) tuples.
+# counts = []
+# for unique in uniques:
+#   count = 0              # Initialize the count to zero.
+#   for word in words:     # Iterate over the words.
+#     if word == unique:   # Is this word equal to the current unique?
+#       count += 1         # If so, increment the count
+#   counts.append((count, unique))
+#
+# print(counts)
+#
+# counts.sort()            # Sorting the list puts the lowest counts first.
+# counts.reverse()         # Reverse it, putting the highest counts first.
+# # Print the ten words with the highest counts.
+# for i in range(min(10, len(counts))):
+#   count, word = counts[i]
+#   print('%s %d' % (word, count))
+
+# names=[]
+
+# формирование графика
+# import matplotlib.pyplot as pl
+# pl.bar(['1','2','3','4','5','6','7','8','9','10'],[1,2,3,4,5,6,7,8,9,10])
+# pl.show()
+
+# import random
+# def helper(n,di):
+#     for i in range(n):
+#         if not i % di:
+#             di=yield i
+#
+# m=[random.randint(40,90) for _ in range(10000)]
+# h=helper(10000,20)
+# count,i=0, next(h)
+#
+# while (count<10 and i<10000):
+#     if m[i]==ord('P'):
+#         count+=1
+#     if count>5000:
+#         i=h.send(5)
+#     elif i>7000:
+#         i=h.send(1)
+#     else:
+#         i=h.send(20)
+#
+# print(count,i)
+#
+# def helper1():
+#     yield from range(0,10000,5)
+# def helper2():
+#     h1=helper1()
+#     yield from h1
+#     yield from range(10000,0,-3)
+# h2=helper2()
+# any(m[x] for x in h2 if m[x]==ord('P'))
+# print(h2,h1)
+
+
+
+# words = open('alice_in_wonderland.txt').read().lower().split()
+#
+#
+# uniques = []
+# for word in words:
+#   if word not in uniques:
+#     uniques.append(word)
+# print(uniques)
+#
+# threelast=[]
+# for x in uniques:
+#     y=x[-3:]
+# if y not in threelast:
+#     threelast.append(y)
+# # print(threelast)
+#
+# threelastall=[]
+# for x in uniques:
+#     y=x[-3:]
+#     threelastall.append(y)
+# print(threelastall)
+#
+# counts = []
+# for unique in threelast:
+#   count = 0
+#   for word in words:
+#     if word == unique:
+#       count += 1
+#   counts.append((count, unique))
+#
+# print(counts)
+#
+# counts.sort()            # Sorting the list puts the lowest counts first.
+# counts.reverse()         # Reverse it, putting the highest counts first.
+# # Print the ten words with the highest counts.
+# for i in range(min(10, len(counts))):
+#   count, word = counts[i]
+#   print('%s %d' % (word, count))
+
+
